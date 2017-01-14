@@ -9,9 +9,23 @@ import javax.servlet.http.HttpServletRequest;
  */
 public class RequestParams {
     private String userId;
+    private String eventName;
+    private String token;
+    private String userToken;
 
     public RequestParams(JsonObject request) {
         this.userId = getString(request, "userId");
+        this.eventName = getString(request, "name");
+        this.token = getString(request, "token");
+        this.userToken = getString(request, "userToken");
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public String getUserToken() {
+        return userToken;
     }
 
     public String getUserId() {
@@ -25,6 +39,10 @@ public class RequestParams {
             value = Integer.parseInt(string);
         }
         return value;
+    }
+
+    public String getEventName() {
+        return eventName;
     }
 
     private String getString(JsonObject request, String pid) {
