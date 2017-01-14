@@ -5,10 +5,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.gson.stream.JsonReader;
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpPost;
+import utils.HttpConnection;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -52,6 +49,13 @@ public class Events extends HttpServlet {
             System.out.println("Installing app for userId :" + params.getUserId());
             System.out.println("User Token :" + params.getToken());
             String url  = "https://api.flock.co/v1/users.getInfo?token="+params.getToken();
+            String response = "";
+            try {
+                response = HttpConnection.jsonGet(url);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            System.out.println(response);
         }
 
         out.flush();
