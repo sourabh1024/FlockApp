@@ -1,18 +1,17 @@
 package Servlet;
 
 import beans.RequestParams;
-import com.google.gson.Gson;
+import co.flock.FlockApiClient;
+import co.flock.model.User;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.google.gson.stream.JsonReader;
-import utils.HttpConnection;
+import services.RegisterUser;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
@@ -45,17 +44,12 @@ public class Events extends HttpServlet {
         JsonObject jsonObject = new JsonParser().parse(requestBody).getAsJsonObject();
         RequestParams params = new RequestParams(jsonObject);
 
+        System.out.println(params.getToken());
+        System.out.println(params.getUserToken());
+
         if (params.getEventName().equals("app.install")) {
-            System.out.println("Installing app for userId :" + params.getUserId());
-            System.out.println("User Token :" + params.getToken());
-            String url  = "https://api.flock.co/v1/users.getInfo?token="+params.getToken();
-            String response = "";
-            try {
-                response = HttpConnection.jsonGet(url);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            System.out.println(response);
+            Thread registerUser = new Thread(new RegisterUser(params.getUserToken()));
+            registerUser.start();
         }
 
         out.flush();

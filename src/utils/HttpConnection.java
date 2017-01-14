@@ -21,7 +21,7 @@ public class HttpConnection {
         con.setRequestMethod("GET");
         //add request header
         con.setRequestProperty("User-Agent", USER_AGENT);
-        con.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
+       // con.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
 
         int responseCode = con.getResponseCode();
         System.out.println("\nSending 'GET' request to" + url);
@@ -86,7 +86,7 @@ public class HttpConnection {
         //add request header
         //make some HTTP header nicety
         conn.setRequestMethod("GET");
-//        conn.setRequestProperty("User-Agent", USER_AGENT);
+        conn.setRequestProperty("User-Agent", USER_AGENT);
 //        conn.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
 //        conn.setDoInput(true);
 //        conn.setDoOutput(true);
