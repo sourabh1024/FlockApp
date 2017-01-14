@@ -1,6 +1,10 @@
 package Servlet;
 
+import beans.RequestParams;
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import com.google.gson.stream.JsonReader;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -36,7 +40,9 @@ public class Events extends HttpServlet {
             Scanner s = new Scanner(req.getInputStream(), "UTF-8").useDelimiter("\\A");
             test+=( s.hasNext() ? s.next() : "");
         }
-//        out.write(new Gson().toJson(test));
+        JsonObject jsonObject = new JsonParser().parse(test).getAsJsonObject();
+        RequestParams params = new RequestParams(jsonObject);
+        out.write(params.getUserId());
         out.flush();
         out.close();
     }
