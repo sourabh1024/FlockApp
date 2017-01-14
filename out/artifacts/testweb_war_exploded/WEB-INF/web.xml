@@ -13,4 +13,22 @@
         <url-pattern>/hello</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>events</servlet-name>
+        <servlet-class>Servlet.Events</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>events</servlet-name>
+        <url-pattern>/events</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>thanks</servlet-name>
+        <servlet-class>Servlet.Thanks</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>thanks</servlet-name>
+        <url-pattern>/thanks</url-pattern>
+    </servlet-mapping>
+
 </web-app>
