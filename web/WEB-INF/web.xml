@@ -31,4 +31,15 @@
         <url-pattern>/thanks</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>widget</servlet-name>
+        <servlet-class>Servlet.Widgets</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>widget</servlet-name>
+        <url-pattern>/widget</url-pattern>
+    </servlet-mapping>
+
+
+
 </web-app>

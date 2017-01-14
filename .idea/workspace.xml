@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb08fcd9-b0c5-4baf-83d4-106991479c6c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/services/RegisterUser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/testweb_war_exploded/WEB-INF/classes/Servlet/Events.class" afterPath="$PROJECT_DIR$/out/artifacts/testweb_war_exploded/WEB-INF/classes/Servlet/Events.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Servlet/Events.class" afterPath="$PROJECT_DIR$/target/classes/Servlet/Events.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Servlet/Events.java" afterPath="$PROJECT_DIR$/src/Servlet/Events.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utils/HttpConnection.java" afterPath="$PROJECT_DIR$/src/utils/HttpConnection.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testweb.iml" afterPath="$PROJECT_DIR$/testweb.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/testweb_war_exploded/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/out/artifacts/testweb_war_exploded/WEB-INF/web.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Servlet/Widgets.java" afterPath="$PROJECT_DIR$/src/Servlet/Widgets.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" />
     </list>
     <ignored path="testweb.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -55,8 +51,8 @@
       <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="30" column="28" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
+            <state relative-caret-position="498">
+              <caret line="38" column="28" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -65,8 +61,20 @@
       <file leaf-file-name="Events.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Servlet/Events.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="51" column="33" selection-start-line="51" selection-start-column="33" selection-end-line="51" selection-end-column="33" />
+            <state relative-caret-position="21">
+              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Widgets.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Servlet/Widgets.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="177">
+              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -77,7 +85,7 @@
       <file leaf-file-name="RegisterUser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/services/RegisterUser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
+            <state relative-caret-position="105">
               <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -88,7 +96,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HttpConnection.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HttpConnection.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/utils/HttpConnection.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
@@ -111,11 +119,14 @@
       <file leaf-file-name="RequestParams.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/beans/RequestParams.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
+            <state relative-caret-position="129">
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#582#583#0" expanded="true" />
                 <element signature="e#610#611#0" expanded="true" />
+                <element signature="e#1139#1140#0" expanded="true" />
+                <element signature="e#1207#1208#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -154,7 +165,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/Servlet/Hello.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/Servlet/Thanks.java" />
         <option value="$PROJECT_DIR$/src/beans/RequestParams.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
@@ -164,6 +174,8 @@
         <option value="$PROJECT_DIR$/src/services/HttpConnection.java" />
         <option value="$PROJECT_DIR$/src/services/RegisterUser.java" />
         <option value="$PROJECT_DIR$/src/Servlet/Events.java" />
+        <option value="$PROJECT_DIR$/src/Servlet/Widgets.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
       </list>
     </option>
   </component>
@@ -274,28 +286,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="testweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="testweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -965,7 +955,7 @@
       <workItem from="1484390029706" duration="1239000" />
       <workItem from="1484391817945" duration="3006000" />
       <workItem from="1484395552128" duration="656000" />
-      <workItem from="1484396337669" duration="8329000" />
+      <workItem from="1484396337669" duration="10227000" />
     </task>
     <task id="LOCAL-00001" summary="User id print">
       <created>1484391528649</created>
@@ -978,7 +968,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21048000" />
+    <option name="totallyTimeSpent" value="22946000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1014,7 +1004,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39863014" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39863014" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1102,11 +1092,59 @@
           <properties />
           <option name="timeStamp" value="66" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Servlet/Events.java</url>
+          <line>42</line>
+          <properties />
+          <option name="timeStamp" value="74" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Servlet/Events.java</url>
+          <line>43</line>
+          <properties />
+          <option name="timeStamp" value="75" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Servlet/Events.java</url>
+          <line>44</line>
+          <properties />
+          <option name="timeStamp" value="76" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Servlet/Events.java</url>
+          <line>46</line>
+          <properties />
+          <option name="timeStamp" value="77" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Servlet/Events.java</url>
+          <line>47</line>
+          <properties />
+          <option name="timeStamp" value="78" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Servlet/Widgets.java</url>
+          <line>29</line>
+          <properties />
+          <option name="timeStamp" value="80" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Servlet/Events.java</url>
+          <line>24</line>
+          <properties />
+          <option name="timeStamp" value="85" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Servlet/Widgets.java</url>
+          <line>24</line>
+          <properties />
+          <option name="timeStamp" value="86" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="74" />
+      <option name="time" value="87" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
@@ -1175,7 +1213,10 @@
           <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#582#583#0" expanded="true" />
             <element signature="e#610#611#0" expanded="true" />
+            <element signature="e#1139#1140#0" expanded="true" />
+            <element signature="e#1207#1208#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1238,7 +1279,10 @@
           <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#582#583#0" expanded="true" />
             <element signature="e#610#611#0" expanded="true" />
+            <element signature="e#1139#1140#0" expanded="true" />
+            <element signature="e#1207#1208#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1293,7 +1337,10 @@
           <caret line="30" column="61" selection-start-line="30" selection-start-column="61" selection-end-line="30" selection-end-column="61" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#582#583#0" expanded="true" />
             <element signature="e#610#611#0" expanded="true" />
+            <element signature="e#1139#1140#0" expanded="true" />
+            <element signature="e#1207#1208#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1415,14 +1462,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="28" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1035">
@@ -1436,17 +1475,6 @@
         <state relative-caret-position="528">
           <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/beans/RequestParams.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#610#611#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1482,28 +1510,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/RegisterUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#246#247#0" expanded="true" />
-            <element signature="e#288#289#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Servlet/Events.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="51" column="33" selection-start-line="51" selection-start-column="33" selection-end-line="51" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Servlet/Thanks.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -1519,6 +1525,60 @@
         <state relative-caret-position="105">
           <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/beans/RequestParams.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#582#583#0" expanded="true" />
+            <element signature="e#610#611#0" expanded="true" />
+            <element signature="e#1139#1140#0" expanded="true" />
+            <element signature="e#1207#1208#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/RegisterUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#246#247#0" expanded="true" />
+            <element signature="e#288#289#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="38" column="28" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Servlet/Events.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Servlet/Widgets.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
