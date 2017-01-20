@@ -40,6 +40,14 @@
         <url-pattern>/widget</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>search</servlet-name>
+        <servlet-class>Servlet.Search</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>search</servlet-name>
+        <url-pattern>/search</url-pattern>
+    </servlet-mapping>
 
 
 </web-app>

@@ -8,12 +8,17 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 /**
- * Created by sourabh.su on 14/01/17.
+ * Created by sourabh.su on 16/01/17.
  */
-public class Widgets extends HttpServlet {
-
+public class Search extends HttpServlet{
     protected void getResponse(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-       req.getRequestDispatcher("index.jsp").forward(req, resp);
+        PrintWriter out = resp.getWriter();
+        resp.setStatus(200);
+        resp.setContentType("text/html");
+        out.println("<h1> Hello there </h1>");
+        out.println(req.getParameterValues("query")[0].toString());
+        out.flush();
+        out.close();
     }
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
