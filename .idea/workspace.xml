@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb08fcd9-b0c5-4baf-83d4-106991479c6c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Servlet/SaveWiki.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/databases/MySqlConnection.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/databases/MySqlConnectionManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/utils/EncryptionUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/testweb_war_exploded/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/out/artifacts/testweb_war_exploded/META-INF/MANIFEST.MF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/testweb_war_exploded/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/out/artifacts/testweb_war_exploded/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/config.properties" afterPath="$PROJECT_DIR$/resources/config.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/beans/WikiDocument.java" afterPath="$PROJECT_DIR$/src/beans/WikiDocument.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/databases/ESConnection.java" afterPath="$PROJECT_DIR$/src/databases/ESConnection.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/databases/ESConnectionManager.java" afterPath="$PROJECT_DIR$/src/databases/ESConnectionManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/services/CreateWiki.java" afterPath="$PROJECT_DIR$/src/services/CreateWiki.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/services/EsIndexWikiDocument.java" afterPath="$PROJECT_DIR$/src/services/EsIndexWikiDocument.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/services/RegisterUser.java" afterPath="$PROJECT_DIR$/src/services/RegisterUser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testweb.iml" afterPath="$PROJECT_DIR$/testweb.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/databases/MySqlConnectionManager.java" afterPath="$PROJECT_DIR$/src/databases/MySqlConnectionManager.java" />
     </list>
     <ignored path="testweb.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -56,7 +40,7 @@
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
+            <state relative-caret-position="264">
               <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
               <folding />
             </state>
@@ -76,9 +60,23 @@
       <file leaf-file-name="MySqlConnectionManager.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/databases/MySqlConnectionManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
-              <folding />
+            <state relative-caret-position="330">
+              <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MySqlConnection.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/databases/MySqlConnection.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -383,7 +381,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="preferences.applicationServers" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -985,7 +983,7 @@
       <workItem from="1484948401955" duration="5652000" />
       <workItem from="1484993814444" duration="3223000" />
       <workItem from="1484997370988" duration="4245000" />
-      <workItem from="1485002884816" duration="1727000" />
+      <workItem from="1485002884816" duration="3183000" />
     </task>
     <task id="LOCAL-00001" summary="User id print">
       <created>1484391528649</created>
@@ -998,7 +996,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48505000" />
+    <option name="totallyTimeSpent" value="49961000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1585,14 +1583,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/services/RegisterUser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="174">
@@ -1611,6 +1601,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/databases/MySqlConnection.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -1623,9 +1621,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/databases/MySqlConnectionManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
-          <folding />
+        <state relative-caret-position="330">
+          <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
