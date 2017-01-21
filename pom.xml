@@ -37,6 +37,11 @@
             <version>1.9.38</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.elasticsearch</groupId>
+            <artifactId>elasticsearch</artifactId>
+            <version>2.3.3</version>
+        </dependency>
     </dependencies>
 
 
