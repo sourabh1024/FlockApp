@@ -14,10 +14,10 @@ public class MySqlConnectionManager {
         if (this.connection == null) {
             try {
                 this.connection = MySqlConnection.getSQLConnection(
-                        SysProperties.getInstance().getProperty("mysqlIP"),
-                        SysProperties.getInstance().getProperty("mysqlDbName"),
-                        SysProperties.getInstance().getProperty("mysqlUsername"),
-                        SysProperties.getInstance().getProperty("mysqlPassword")
+                        SysProperties.getInstance().getProperty("127.0.0.1"),
+                        SysProperties.getInstance().getProperty("flockwiki"),
+                        SysProperties.getInstance().getProperty("root"),
+                        SysProperties.getInstance().getProperty("")
                 );
             } catch (Exception ex){
                 throw ex;
