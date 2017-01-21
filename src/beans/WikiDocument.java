@@ -8,7 +8,7 @@ public class WikiDocument {
     private String title;
     private String content;
     private String userName;
-    private String groupName;
+    private String teamName;
 
     public String getTitle() {
         return title;
@@ -34,11 +34,11 @@ public class WikiDocument {
         this.userName = userName;
     }
 
-    public String getGroupName() {
-        return groupName;
+    public String getTeamName() {
+        return teamName;
     }
 
-    public void setGroupName(String groupName) {
-        this.groupName = groupName;
+    public void setTeamName(String groupName) {
+        this.teamName = groupName;
     }
 }

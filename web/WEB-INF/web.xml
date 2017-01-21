@@ -50,4 +50,14 @@
     </servlet-mapping>
 
 
+    <servlet>
+        <servlet-name>saveWiki</servlet-name>
+        <servlet-class>Servlet.SaveWiki</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>saveWiki</servlet-name>
+        <url-pattern>/saveWiki</url-pattern>
+    </servlet-mapping>
+
+
 </web-app>

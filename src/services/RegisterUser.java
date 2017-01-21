@@ -22,6 +22,7 @@ public class RegisterUser implements Runnable {
                 User user = flockApiClient.getUserInfo();
                 System.out.println(user.getFirstName());
 
+
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
