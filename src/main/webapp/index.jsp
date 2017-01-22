@@ -22,10 +22,10 @@
 <input id="userName" value="<%=userName%>" type="hidden" />
 <input id="group" value="<%=groupName%>" type="hidden" />
 
-<div class="container" style="text-align: center" ng-controller="searchController">
+<div class="container" style="text-align: center" ng-controller="searchController" ng-cloak>
   <br>
     <input style="margin-bottom: 1px;" type="text" id="search-wiki-text"/>
-    <button class="btn btn-success" type="button" id="search-wiki-button" ng-click="searchWiki()">Search</button>
+    <button class="btn btn-success" type="button" id="search-wiki-button" ng-click="searchResponse()">Search</button>
     <button class="btn btn-success pull-right" type="button" style="margin: auto;" id="create-wiki-side-button" ng-if="searchEnabled">Create Wiki</button>
   <br/> <br/>
   <div id="wrapper" style="text-align: center" ng-if="!searchEnabled">

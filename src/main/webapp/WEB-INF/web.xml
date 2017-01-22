@@ -41,8 +41,8 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>search</servlet-name>
-        <servlet-class>Servlet.Search</servlet-class>
+        <servlet-name>savewiki</servlet-name>
+        <servlet-class>Servlet.SaveWiki</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>savewiki</servlet-name>
@@ -50,8 +50,8 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>savewiki</servlet-name>
-        <servlet-class>Servlet.SaveWiki</servlet-class>
+        <servlet-name>search</servlet-name>
+        <servlet-class>Servlet.SearchWiki</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>search</servlet-name>

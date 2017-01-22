@@ -8,7 +8,8 @@ app.controller('searchController', function ($scope, $http, $location, $rootScop
     console.log("hello");
     $scope.searchEnabled = false;
 
-    $scope.searchWiki = function () {
+    $scope.searchResponse = function () {
+        console.log("search kro");
         var userId = jQuery('#userId').val();
         var keyword = jQuery('#search-wiki-text').val();
         $scope.searchEnabled = true;
