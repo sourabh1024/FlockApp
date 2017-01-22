@@ -33,7 +33,10 @@ public class RequestParams {
     }
 
     private int getInt(JsonObject request, String pid) {
-        String string = request.getAsJsonPrimitive(pid).getAsString();
+        String string = null;
+        if(request.getAsJsonPrimitive(pid) != null) {
+            string = request.getAsJsonPrimitive(pid).getAsString();
+        }
         int value = -1;
         if (string != null) {
             value = Integer.parseInt(string);
@@ -46,6 +49,9 @@ public class RequestParams {
     }
 
     private String getString(JsonObject request, String pid) {
-        return request.getAsJsonPrimitive(pid).getAsString();
+        if(request.getAsJsonPrimitive(pid) != null) {
+            return request.getAsJsonPrimitive(pid).getAsString();
+        }
+        return "";
     }
 }

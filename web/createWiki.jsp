@@ -25,10 +25,10 @@
         <div class="layout-padding">
             <h5> Visible To </h5>
             <label class="radio-inline">
-                <input type="radio" name="optradio">All
+                <input type="radio" name="optradio" value="all">All
             </label>
             <label class="radio-inline">
-                <input type="radio" name="optradio" checked>Team
+                <input type="radio" name="optradio" value="team" checked>Team
             </label>
             <button class="btn btn-success pull-right" type="button" id="save-wiki-button" ng-click="saveWiki()">Save</button>
         </div>
