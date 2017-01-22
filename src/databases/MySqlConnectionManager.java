@@ -1,5 +1,7 @@
 package databases;
 
+import utils.SysProperties;
+
 import java.sql.Connection;
 
 /**
@@ -8,4 +10,19 @@ import java.sql.Connection;
 public class MySqlConnectionManager {
     public Connection connection;
 
+    public Connection getSqlConnection() throws Exception {
+        if (this.connection == null) {
+            try {
+                this.connection = MySqlConnection.getSQLConnection(
+                        SysProperties.getInstance().getProperty("127.0.0.1"),
+                        SysProperties.getInstance().getProperty("flockwiki"),
+                        SysProperties.getInstance().getProperty("root"),
+                        SysProperties.getInstance().getProperty("")
+                );
+            } catch (Exception ex){
+                throw ex;
+            }
+        }
+        return connection;
+    }
 }
