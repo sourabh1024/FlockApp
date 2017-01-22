@@ -13,11 +13,8 @@ import java.sql.Statement;
  */
 public class RegisterUser implements Runnable {
     private String userToken;
-    private static MySqlConnectionManager mySqlConnectionManager;
+    private MySqlConnectionManager mySqlConnectionManager;
 
-    static {
-        mySqlConnectionManager = new MySqlConnectionManager();
-    }
 
     public RegisterUser(String userToken){
         this.userToken = userToken;
@@ -25,20 +22,23 @@ public class RegisterUser implements Runnable {
 
     public void run() {
         try {
+            mySqlConnectionManager = new MySqlConnectionManager();
             System.out.println("Request recieved for : " + this.userToken);
             Thread.sleep(200);
             FlockApiClient flockApiClient = new FlockApiClient(this.userToken);
             try {
-                User user = flockApiClient.getUserInfo();
-                System.out.println(user.getFirstName());
-                Connection connection = mySqlConnectionManager.getSqlConnection();
-                String query = "INSERT INTO user_info(userid,teamid,username,token) VALUES ('"+user.getId()+"', '"+user.getTeamId()+"', '"+ user.getFirstName()+" "+user.getLastName()+"', '"+this.userToken+"')";
-                Statement statement = connection.createStatement();
-                ResultSet resultSet = statement.executeQuery(query);
+               // User user = flockApiClient.getUserInfo();
+              //  System.out.println("*****************" + user.getFirstName());
+
+              //  Connection connection = mySqlConnectionManager.getSqlConnection();
+             //   String query = "INSERT INTO user_info(userid,teamid,username,token) VALUES ('"+user.getId()+"', '"+user.getTeamId()+"', '"+ user.getFirstName()+" "+user.getLastName()+"', '"+this.userToken+"')";
+             //   System.out.println(query);
+             //   Statement statement = connection.createStatement();
+             //   ResultSet resultSet = statement.executeQuery(query);
                 //TODO: Check if the data is inserted or not
 
             } catch (Exception e) {
-                System.out.println(e.getMessage());
+                e.printStackTrace();
             }
 
         } catch (Exception ex) {
