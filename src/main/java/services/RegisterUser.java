@@ -1,7 +1,7 @@
 package services;
 
-import co.flock.FlockApiClient;
-import co.flock.model.User;
+
+
 import databases.MySqlConnectionManager;
 
 import java.sql.Connection;
@@ -25,7 +25,7 @@ public class RegisterUser implements Runnable {
             mySqlConnectionManager = new MySqlConnectionManager();
             System.out.println("Request recieved for : " + this.userToken);
             Thread.sleep(200);
-            FlockApiClient flockApiClient = new FlockApiClient(this.userToken);
+            //FlockApiClient flockApiClient = new FlockApiClient(this.userToken);
             try {
                // User user = flockApiClient.getUserInfo();
               //  System.out.println("*****************" + user.getFirstName());

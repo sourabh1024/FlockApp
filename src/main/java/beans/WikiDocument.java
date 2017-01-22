@@ -18,10 +18,14 @@ public class WikiDocument {
     private String teamName;
     private String visibleTo;
 
+    public WikiDocument() {
+
+    }
+
     public WikiDocument(HttpServletRequest request) {
         this.title = getString(request, "title");
         this.content = getString(request, "content");
-        this.visibleTo = getString(request, "visibleTo");
+        //this.visibleTo = getString(request, "visibleTo");
         String requestBody = "";
         if ("POST".equalsIgnoreCase(request.getMethod())) {
             Scanner s = null;
@@ -36,6 +40,7 @@ public class WikiDocument {
         JsonObject jsonObject = new JsonParser().parse(requestBody).getAsJsonObject();
         RequestParams params = new RequestParams(jsonObject);
         this.userId = params.getUserId();
+        System.out.println("Recieved crate wiki request for user " + this.userId);
     }
 
     private String getString(HttpServletRequest request, String pid) {
@@ -77,5 +82,9 @@ public class WikiDocument {
 
     public String getVisibleTo() {
         return visibleTo;
+    }
+
+    public void setTeamName(String teamName) {
+        this.teamName = teamName;
     }
 }

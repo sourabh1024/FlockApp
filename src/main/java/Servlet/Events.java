@@ -1,8 +1,7 @@
 package Servlet;
 
 import beans.RequestParams;
-import co.flock.FlockApiClient;
-import co.flock.model.User;
+
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import services.RegisterUser;

@@ -17,9 +17,7 @@ public class Hello extends HttpServlet {
         resp.setStatus(200);
         resp.setContentType("text/plain");
         out.write("hello");
-
-
-                out.flush();
+        out.flush();
         out.close();
     }
 }

@@ -1,5 +1,6 @@
 package services;
 
+import beans.WikiBean;
 import beans.WikiDocument;
 import org.elasticsearch.action.index.IndexResponse;
 import org.elasticsearch.action.search.MultiSearchResponse;
@@ -26,26 +27,31 @@ public class EsIndexWikiDocument {
         this.esClient = esClient;
     }
 
-    public String EsQuery(WikiDocument wikiDocument){
+    public String EsQuery(WikiBean wikiBean){
         String query = "PUT /wiki/wiki/"+1001+"\n" +
                 "{\n" +
-                "    \"user_id\":\""+wikiDocument.getUserId()+"\",\n" +
-                "    \"title\":\""+wikiDocument.getTitle()+"\",\n" +
-                "    \"content\":\""+wikiDocument.getContent()+"\",\n" +
-                "    \"team_name\":\""+wikiDocument.getTeamName()+"\"\n" +
+                "    \"user_id\":\""+wikiBean.getUserId()+"\",\n" +
+                "    \"title\":\""+wikiBean.getTitle()+"\",\n" +
+                "    \"content\":\""+wikiBean.getContent()+"\",\n" +
+                "    \"team_name\":\""+wikiBean.getTeamName()+"\"\n" +
                 "}";
         return query;
     }
 
-    public IndexResponse indexDocument(WikiDocument wikiDocument) {
+    public IndexResponse indexDocument(WikiBean wikiBean) {
         try {
-            IndexResponse response = esClient.prepareIndex("wiki", "wiki", EncryptionUtils.getCryptoHash(wikiDocument.getTitle()+wikiDocument.getUserId()))
+            IndexResponse response = esClient.prepareIndex(
+                    "wiki",
+                    "wiki",
+                    EncryptionUtils.getCryptoHash(wikiBean.getTitle()+wikiBean.getUserId())
+                    )
                     .setSource(jsonBuilder()
                             .startObject()
-                            .field("user_id", wikiDocument.getUserId())
-                            .field("title", wikiDocument.getTitle())
-                            .field("content", wikiDocument.getContent())
-                            .field("team_name", wikiDocument.getTeamName())
+                            .field("user_id", wikiBean.getUserId())
+                            .field("title", wikiBean.getTitle())
+                            .field("content", wikiBean.getContent())
+                            .field("team_name", wikiBean.getTeamName())
+                            .field("visible_to", wikiBean.getVisibleTo())
                             .endObject()
                     )
                     .get();

@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletRequest;
  */
 public class RequestParams {
     private String userId;
+    private String userName;
+    private String group;
     private String eventName;
     private String token;
     private String userToken;
@@ -18,6 +20,8 @@ public class RequestParams {
         this.eventName = getString(request, "name");
         this.token = getString(request, "token");
         this.userToken = getString(request, "userToken");
+        this.userName = getString(request, "userName");
+        this.group = getString(request, "chat");
     }
 
     public String getToken() {
@@ -53,5 +57,13 @@ public class RequestParams {
             return request.getAsJsonPrimitive(pid).getAsString();
         }
         return "";
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public String getGroup() {
+        return group;
     }
 }
