@@ -29,7 +29,7 @@ public class EsIndexWikiDocument {
     public String EsQuery(WikiDocument wikiDocument){
         String query = "PUT /wiki/wiki/"+1001+"\n" +
                 "{\n" +
-                "    \"user_id\":\""+wikiDocument.getUserName()+"\",\n" +
+                "    \"user_id\":\""+wikiDocument.getUserId()+"\",\n" +
                 "    \"title\":\""+wikiDocument.getTitle()+"\",\n" +
                 "    \"content\":\""+wikiDocument.getContent()+"\",\n" +
                 "    \"team_name\":\""+wikiDocument.getTeamName()+"\"\n" +
@@ -39,10 +39,10 @@ public class EsIndexWikiDocument {
 
     public IndexResponse indexDocument(WikiDocument wikiDocument) {
         try {
-            IndexResponse response = esClient.prepareIndex("wiki", "wiki", EncryptionUtils.getCryptoHash(wikiDocument.getTitle()+wikiDocument.getUserName()))
+            IndexResponse response = esClient.prepareIndex("wiki", "wiki", EncryptionUtils.getCryptoHash(wikiDocument.getTitle()+wikiDocument.getUserId()))
                     .setSource(jsonBuilder()
                             .startObject()
-                            .field("user_id", wikiDocument.getUserName())
+                            .field("user_id", wikiDocument.getUserId())
                             .field("title", wikiDocument.getTitle())
                             .field("content", wikiDocument.getContent())
                             .field("team_name", wikiDocument.getTeamName())
