@@ -2,24 +2,39 @@
  * Created by sourabh.su on 18/01/17.
  */
 
-$(document).ready(function () {
-    $('#content').liveEdit({
-        height: 350,
-        css: ['bootstrap/css/bootstrap.min.css', 'bootstrap/bootstrap_extend.css'] /* Apply bootstrap css into the editing area */,
-        groups: [
-            ["group1", "", ["Bold", "Italic", "Underline", "ForeColor", "RemoveFormat"]],
-            ["group2", "", ["Bullets", "Numbering", "Indent", "Outdent"]],
-            ["group3", "", ["Paragraph", "FontSize", "FontDialog", "TextDialog"]],
-            ["group4", "", ["LinkDialog", "ImageDialog", "TableDialog", "Emoticons", "Snippets"]],
-            ["group5", "", ["Undo", "Redo", "FullScreen", "SourceDialog"]]
-        ] /* Toolbar configuration */
-    });
+var app = app || angular.module('app', []);
 
-    $('#content').data('liveEdit').startedit();
+app.controller('searchController', function ($scope, $http, $location, $rootScope, $window, $q) {
+    console.log("hello");
+    $scope.searchEnabled = false;
+
+    $scope.searchWiki = function () {
+        var userId = jQuery('#userId').val();
+        var keyword = jQuery('#search-wiki-text').val();
+        $scope.searchEnabled = true;
+        $scope.searchWiki(keyword, userId).then(function (data) {
+            console.log("data has come!");
+        });
+    };
+
+    $scope.searchWiki = function (keyword, userId) {
+        var def = $q.defer();
+        var response = $http({
+            url: "/testweb/search",
+            method: "GET",
+            params: {
+                keyword : keyword,
+                userId : userId
+            }
+        });
+
+        response.success(function(data, status, headers, config) {
+            def.resolve(data);
+            console.log(data);
+        });
+        response.error(function(data, status, headers, config) {
+            def.reject("Error While Fetching Results!");
+        });
+        return def.promise;
+    };
 });
-
-function save() {
-    var sHtml = $('#content').data('liveEdit').getXHTMLBody(); //Use before finishedit()
-    alert(sHtml); /*You can use the sHtml for any purpose, eg. saving the content to your database, etc, depend on you custom app */
-}
-

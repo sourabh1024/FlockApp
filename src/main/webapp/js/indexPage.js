@@ -11,11 +11,15 @@ $(document).ready(function () {
             window.location = '/testweb/createWiki.jsp?userId='+userId+'&userName='+userName+'&groupName='+groupName;
         });
 
-        $('#search-wiki-button').click(function () {
-            $.ajax({url: '/testweb/search?userId='+userId+'&userName='+userName+'&groupName='+groupName, success: function(result){
-                $("#div1").html(result);
-            }});
+        $('#create-wiki-side-button').click(function () {
+            window.location = '/testweb/createWiki.jsp?userId='+userId+'&userName='+userName+'&groupName='+groupName;
         });
+
+        // $('#search-wiki-button').click(function () {
+        //     $.ajax({url: '/testweb/search?userId='+userId+'&userName='+userName+'&groupName='+groupName, success: function(result){
+        //         $("#div1").html(result);
+        //     }});
+        // });
 
     }
 );
