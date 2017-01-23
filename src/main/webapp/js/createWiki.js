@@ -13,6 +13,42 @@ function getParameterByName(name,url) {
 var app = app || angular.module('app', []);
 
 app.controller('createWikiCont', function ($scope, $http, $location, $rootScope, $window, $q) {
+
+    $scope.getDocument = function (userId, id) {
+        var def = $q.defer();
+        var response = $http({
+            url: "/testweb/getdoc",
+            method: "GET",
+            params: {
+                documentId : id,
+                userId : userId
+            }
+        });
+
+        response.success(function(data, status, headers, config) {
+            def.resolve(data);
+            console.log(data);
+        });
+        response.error(function(data, status, headers, config) {
+            def.reject("Error While Fetching Results!");
+        });
+        return def.promise;
+    };
+
+    $scope.init = function () {
+        if(getParameterByName("documentId") != null){
+            var documentId = getParameterByName("documentId");
+            var userId = getParameterByName("userId");
+            $scope.getDocument(userId, documentId).then(function (data) {
+                var title = jQuery('#wikiTitle').val(data.title);
+                var content = simplemde.value(data.content);
+                var visibleTo = jQuery("input[name='optradio']:checked").val(data.visibleTo);
+            });
+        }
+    };
+
+    $scope.init();
+
     $scope.saveWiki = function () {
         var title = jQuery('#wikiTitle').val();
         var content = simplemde.value();
@@ -29,8 +65,11 @@ app.controller('createWikiCont', function ($scope, $http, $location, $rootScope,
         $scope.saveWikiApi(title, content, visibleTo, userId, userName, groupName);
     };
 
+
+
     $scope.saveWikiApi = function (title, content, visible, userId, userName, groupName) {
         var def = $q.defer();
+        var documentId = getParameterByName("documentId") == null ? -1 : getParameterByName("documentId");
         var response = $http({
             url: "/testweb/savewiki",
             method: "POST",
@@ -40,7 +79,8 @@ app.controller('createWikiCont', function ($scope, $http, $location, $rootScope,
                 visibleTo : visible,
                 userId : userId,
                 userName : userName,
-                groupName : groupName
+                groupName : groupName,
+                documentId : documentId
             }
         });
 

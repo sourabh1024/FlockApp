@@ -4,6 +4,7 @@ package services;
 import com.google.gson.Gson;
 import databases.ESConnectionManager;
 import databases.ESUtils;
+import org.elasticsearch.action.get.GetResponse;
 import org.elasticsearch.action.index.IndexResponse;
 import org.elasticsearch.action.search.MultiSearchResponse;
 import org.elasticsearch.client.Client;
@@ -46,13 +47,37 @@ public class SearchWikiUtil {
                 if (item != null) {
                     for (SearchHit hit : item.getResponse().getHits()) {
                         Map map = hit.getSource();
+                        map.put("id",hit.getId());
                         mylist.add(map);
+
                     }
                 }
             }
             result = gson.toJson(mylist);
         }
 
+        return result;
+    }
+
+    public String searchWikiByDocumentId(String documentId) {
+        GetResponse response = null;
+        Integer numberofAttempts = 0;
+
+        while (numberofAttempts < maxNumberOfAttempts) {
+            this.esClient = new ESConnectionManager().getEsClient();
+            if (this.esClient!=null) {
+                ESUtils esUtils = new ESUtils(esClient);
+                response = esUtils.getDocumentById(documentId);
+                break;
+            }
+            numberofAttempts++;
+        }
+
+        String result = "";
+        if (response!=null) {
+            Gson gson = new Gson();
+            result = gson.toJson(response.getSource());
+        }
         return result;
     }
 

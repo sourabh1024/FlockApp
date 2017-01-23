@@ -1,9 +1,14 @@
 <%@ page import="beans.RequestParams" %>
 <%
-  RequestParams params= (RequestParams) request.getAttribute("requestParams");
-  String userId = params.getUserId();
-  String userName = params.getUserName();
-  String groupName = params.getGroup();
+  String userId = null;
+  try {
+    RequestParams params= (RequestParams) request.getAttribute("requestParams");
+    if(params.getUserId() != null)
+      userId = params.getUserId();
+  } catch (Exception e){
+
+  }
+
 %>
 <!DOCTYPE html>
 <html ng-app="app">
@@ -14,26 +19,25 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
   <link rel="stylesheet" href="https://jqueryvalidation.org/files/demo/site-demos.css">
   <link rel="stylesheet" href="css/searchBar.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
 <input id="userId" value="<%=userId%>" type="hidden" />
-<input id="userName" value="<%=userName%>" type="hidden" />
-<input id="group" value="<%=groupName%>" type="hidden" />
 
-<div class="container" style="text-align: center" ng-controller="searchController" ng-cloak>
-  <br>
+<div class="container" ng-controller="searchController" ng-cloak>
+  <div class="row layout-padding" style="text-align: center; padding-top: 10px; padding-bottom: 10px;">
     <input style="margin-bottom: 1px;" type="text" id="search-wiki-text"/>
     <button class="btn btn-success" type="button" id="search-wiki-button" ng-click="searchResponse()">Search</button>
     <button class="btn btn-success pull-right" type="button" style="margin: auto;" id="create-wiki-side-button" ng-if="searchEnabled">Create Wiki</button>
-  <br/> <br/>
-  <div id="wrapper" style="text-align: center" ng-if="!searchEnabled">
+  </div>
+  <div class="row layout-padding" id="wrapper" style="text-align: center" ng-if="!searchEnabled">
     <button class="btn btn-success" type="button" style="margin: auto;" id="create-wiki-button">Create Wiki</button>
   </div>
-  <div class="search-section1" id="searchDiv" ng-if="searchEnabled">
+  <div class="search-section1 layout-padding" id="searchDiv" ng-if="searchEnabled">
     <div class="list-group" ng-repeat="searchRow in searchResults">
-      <div><a class="list-group" href=""><h4>{{searchRow.title}}</h4></a></div>
+      <div><a class="list-group" ng-click="goToWikiPage(searchRow.id)"><h4>{{searchRow.title}}</h4></a></div>
       <div class="list-group desc" ><p id="searchPara">{{searchRow.content}}</p></div>
     </div>
   </div>

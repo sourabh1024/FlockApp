@@ -4,15 +4,12 @@
 
 $(document).ready(function () {
         var userId = $('#userId').val();
-        var userName = $('#userName').val();
-        var groupName = $('#group').val();
-        console.log("here ", userId, userName, groupName);
         $('#create-wiki-button').click(function () {
-            window.location = '/testweb/createWiki.jsp?userId='+userId+'&userName='+userName+'&groupName='+groupName;
+            window.location = '/testweb/createWiki.jsp?userId='+userId;
         });
 
         $('#create-wiki-side-button').click(function () {
-            window.location = '/testweb/createWiki.jsp?userId='+userId+'&userName='+userName+'&groupName='+groupName;
+            window.location = '/testweb/createWiki.jsp?userId='+userId;
         });
 
         // $('#search-wiki-button').click(function () {

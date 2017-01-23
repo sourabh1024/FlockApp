@@ -1,5 +1,6 @@
 package databases;
 
+import org.elasticsearch.action.get.GetResponse;
 import org.elasticsearch.action.search.MultiSearchResponse;
 import org.elasticsearch.action.search.SearchRequestBuilder;
 import org.elasticsearch.action.search.SearchType;
@@ -56,6 +57,13 @@ public class ESUtils {
         SearchRequestBuilder searchRequestBuilder = esClient.prepareSearch().setSize(50).setQuery(this.getESSearchQuery(query, teamId)).setSearchType(SearchType.DFS_QUERY_THEN_FETCH);
         MultiSearchResponse multiSearchResponse = esClient.prepareMultiSearch().add(searchRequestBuilder).execute().actionGet();
         return multiSearchResponse;
+    }
+
+    public GetResponse getDocumentById(String documentId) {
+        GetResponse response = esClient.prepareGet("wiki", "wiki", documentId)
+                .execute()
+                .actionGet();
+        return response;
     }
 
 }

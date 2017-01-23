@@ -19,6 +19,7 @@ public class WikiBean {
     private String teamName;
     private String visibleTo;
     private String keyword;
+    private String documentId;
 
 
     public WikiBean(HttpServletRequest request) {
@@ -28,6 +29,7 @@ public class WikiBean {
         this.userName = getString(request, "userName");
         this.visibleTo = getString(request, "visibleTo");
         this.keyword = getString(request, "keyword");
+        this.documentId = getString(request, "documentId");
         this.teamName = CreateWiki.getInstance().getUserDetailsFromSql(this.userId).get("teamId").toString();
         System.out.println("Recieved crate wiki request for user " + this.userId);
     }
@@ -86,5 +88,9 @@ public class WikiBean {
 
     public String getKeyword() {
         return keyword;
+    }
+
+    public String getDocumentId() {
+        return documentId;
     }
 }

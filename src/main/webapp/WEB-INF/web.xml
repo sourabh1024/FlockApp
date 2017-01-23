@@ -58,5 +58,14 @@
         <url-pattern>/search</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>getdoc</servlet-name>
+        <servlet-class>Servlet.GetDocument</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>getdoc</servlet-name>
+        <url-pattern>/getdoc</url-pattern>
+    </servlet-mapping>
+
 
 </web-app>

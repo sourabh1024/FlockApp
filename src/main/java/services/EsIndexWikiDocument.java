@@ -39,11 +39,17 @@ public class EsIndexWikiDocument {
     }
 
     public IndexResponse indexDocument(WikiBean wikiBean) {
+
+        String documentId = wikiBean.getDocumentId();
+        if (documentId.equals("-1")) {
+            documentId = EncryptionUtils.getCryptoHash(wikiBean.getTitle()+wikiBean.getUserId());
+        }
+
         try {
             IndexResponse response = esClient.prepareIndex(
                     "wiki",
                     "wiki",
-                    EncryptionUtils.getCryptoHash(wikiBean.getTitle()+wikiBean.getUserId())
+                    documentId
                     )
                     .setSource(jsonBuilder()
                             .startObject()
