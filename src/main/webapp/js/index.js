@@ -7,6 +7,7 @@ var app = app || angular.module('app', []);
 app.controller('searchController', function ($scope, $http, $location, $rootScope, $window, $q) {
     console.log("hello");
     $scope.searchEnabled = false;
+    $scope.searchResults = [];
 
     $scope.searchResponse = function () {
         console.log("search kro");
@@ -15,6 +16,7 @@ app.controller('searchController', function ($scope, $http, $location, $rootScop
         $scope.searchEnabled = true;
         $scope.searchWiki(keyword, userId).then(function (data) {
             console.log("data has come!");
+            $scope.searchResults = data;
         });
     };
 

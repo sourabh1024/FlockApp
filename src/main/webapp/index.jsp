@@ -31,6 +31,12 @@
   <div id="wrapper" style="text-align: center" ng-if="!searchEnabled">
     <button class="btn btn-success" type="button" style="margin: auto;" id="create-wiki-button">Create Wiki</button>
   </div>
+  <div class="search-section1" id="searchDiv" ng-if="searchEnabled">
+    <div class="list-group" ng-repeat="searchRow in searchResults">
+      <div><a class="list-group" href=""><h4>{{searchRow.title}}</h4></a></div>
+      <div class="list-group desc" ><p id="searchPara">{{searchRow.content}}</p></div>
+    </div>
+  </div>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>

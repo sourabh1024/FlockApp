@@ -1,0 +1,132 @@
+
+.SearchDiv {
+    margin-bottom: 5%;
+}
+
+.desc{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200ch;
+}
+
+#searchLink{
+    width: 200px;
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden
+}
+
+#parent{
+    padding: 0 auto;
+    width: 100%;
+}
+
+#child-left{
+    float: left;
+    width: 70%;
+}
+
+#child-right{
+    padding-top: 1%;
+    float: right;
+    width: 30%;
+    padding-right: 15%;
+}
+
+#inputg{
+    padding-bottom: 19px;
+}
+
+#adLink{
+    width: 200px;
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+#custom{
+    color: white;
+}
+
+#search{
+    color: grey;
+}
+
+#adsDiv{
+    max-height: 300px;
+    width: 80%;
+    overflow:hidden;
+    background-color: bisque;
+    padding-left: 10px;
+    float:left;
+}
+
+#adsDivRight{
+    max-height: 500px;
+    overflow:hidden;
+    background-color: bisque;
+    padding-left: 10px;
+    float:right;
+}
+
+#nButton{
+    width: 80%;
+    overflow:auto;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    display: none;
+}
+
+#nButton2{
+    width: 80%;
+    overflow:auto;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    display: none;
+}
+
+#searchDiv{
+    width: 80%;
+    background-color: aliceblue;
+    overflow:auto;
+    padding-left: 10px;
+}
+
+#row1{
+    padding-bottom: 10px;
+    padding-top:30px;
+    background-color: currentColor;
+    position: relative;
+    z-index: 300;
+}
+
+#row2{
+    flex-grow: 1;
+    overflow: auto;
+}
+
+.col-lg-5{
+    float: left;
+    display : inline;
+}
+
+.col-lg-6{
+    float:left;
+    display : inline;
+}
+
+#keyword{
+    width: 623px;
+}
+
+
+#searchPara{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
