@@ -17,7 +17,7 @@ app.controller('createWikiCont', function ($scope, $http, $location, $rootScope,
     $scope.getDocument = function (userId, id) {
         var def = $q.defer();
         var response = $http({
-            url: "/testweb/getdoc",
+            url: "/getdoc",
             method: "GET",
             params: {
                 documentId : id,
@@ -51,14 +51,11 @@ app.controller('createWikiCont', function ($scope, $http, $location, $rootScope,
 
     $scope.saveWiki = function () {
         var title = jQuery('#wikiTitle').val();
-        var content = simplemde.options.previewRender(simplemde.value());
+        $scope.htmlContent = simplemde.options.previewRender(simplemde.value());
+        $scope.content = simplemde.value();
         var visibleTo = jQuery("input[name='optradio']:checked").val();
         var userId = getParameterByName("userId");
-        console.log("Title : ", title);
-        console.log("Content : ", content);
-        console.log("Visible To: ", visibleTo);
-        console.log("user Id : ", userId);
-        $scope.saveWikiApi(title, content, visibleTo, userId).then(function (data) {
+        $scope.saveWikiApi(title, visibleTo, userId).then(function (data) {
             if(data.flag == "-1") {
                 alert("Error!");
                 return;
@@ -69,25 +66,26 @@ app.controller('createWikiCont', function ($scope, $http, $location, $rootScope,
 
     $scope.goToWikiPage = function (id) {
         var userId = getParameterByName("userId");
-        window.location = '/testweb/wikiPage.jsp?userId='+userId+'&id='+id;
+        window.location = '/wikiPage.jsp?userId='+userId+'&id='+id;
     };
 
     $scope.home = function () {
         var userId = getParameterByName("userId");
-        window.location = '/testweb/index.jsp?userId='+userId;
+        window.location = '/index.jsp?userId='+userId;
     };
 
-    $scope.saveWikiApi = function (title, content, visible, userId) {
+    $scope.saveWikiApi = function (title, visible, userId) {
         var def = $q.defer();
         var documentId = getParameterByName("documentId") == null ? -1 : getParameterByName("documentId");
         var response = $http({
-            url: "/testweb/savewiki",
+            url: "/savewiki",
             method: "POST",
             params: {
                 title : title,
-                content : content,
+                content : $scope.content,
                 visibleTo : visible,
                 userId : userId,
+                htmlContent : $scope.htmlContent,
                 documentId : documentId
             }
         });

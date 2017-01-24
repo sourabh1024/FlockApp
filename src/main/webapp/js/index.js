@@ -37,7 +37,7 @@ app.controller('searchController', function ($scope, $http, $location, $rootScop
         if(userId == "null"){
             userId = getParameterByName("userId");
         }
-        window.location = '/testweb/wikiPage.jsp?userId='+userId+'&id='+id;
+        window.location = '/wikiPage.jsp?userId='+userId+'&id='+id;
     };
 
     $scope.createWiki = function () {
@@ -45,13 +45,17 @@ app.controller('searchController', function ($scope, $http, $location, $rootScop
         if(userId == "null"){
             userId = getParameterByName("userId");
         }
-        window.location = '/testweb/createWiki.jsp?userId='+userId;
+        window.location = '/createWiki.jsp?userId='+userId;
+    };
+
+    $scope.getWiki = function () {
+
     };
 
     $scope.searchWiki = function (keyword, userId) {
         var def = $q.defer();
         var response = $http({
-            url: "/testweb/search",
+            url: "/search",
             method: "GET",
             params: {
                 keyword : keyword,

@@ -3,7 +3,7 @@
 <html ng-app="app">
 <head>
     <title>Wiki</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+    <link rel="stylesheet" href="css/simplemde.min.css">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Optional theme -->
@@ -26,7 +26,7 @@
         </div>
 
         <div class="layout-padding">
-            <textarea id="wiki" placeholder="Write Something..." required></textarea>
+            <textarea id="wiki" style="overflow: scroll;  height: 200px;" placeholder="Write Something..." required ></textarea>
         </div>
 
         <div class="layout-padding">
@@ -35,7 +35,7 @@
                 <input type="radio" name="optradio" id="all" value="all">All
             </label>
             <label class="radio-inline">
-                <input type="radio" name="optradio" id="team" value="team" checked>Team
+                <input type="radio" name="optradio" id="team" value="team" checked>Organization
             </label>
 
             <button class="btn btn-info pull-right layout-padding" type="button" id="home-button" style="margin-left: 5px;" ng-click="home()"><span class="fa fa-home"></span> Home</button>
@@ -58,13 +58,6 @@
 <script src="js/createWiki.js"></script>
 <script>
     var simplemde = new SimpleMDE();
-
-    jQuery.validator.setDefaults({
-        debug: true,
-        success: "valid"
-    });
-    var form = $( "#wikiForm" );
-    form.validate();
 </script>
 </body>
 </html>

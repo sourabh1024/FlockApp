@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 public class WikiBean {
     private String title;
     private String content;
+    private String htmlContent;
     private String userId;
     private String userName;
     private String teamName;
@@ -30,8 +31,9 @@ public class WikiBean {
         this.visibleTo = getString(request, "visibleTo");
         this.keyword = getString(request, "keyword");
         this.documentId = getString(request, "documentId");
+        this.htmlContent = getString(request, "htmlContent");
         this.teamName = CreateWiki.getInstance().getUserDetailsFromSql(this.userId).get("teamId").toString();
-        this.description = GeneralUtils.getDescriptionFromContent(this.content);
+        this.description = GeneralUtils.getDescriptionFromContent(this.getHtmlContent());
         System.out.println("Recieved crate wiki request for user " + this.userId);
     }
 
@@ -95,11 +97,15 @@ public class WikiBean {
         return documentId;
     }
 
-    public String getDescription() {
-        return description;
+    public String getHtmlContent() {
+        return htmlContent;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setHtmlContent(String htmlContent) {
+        this.htmlContent = htmlContent;
+    }
+
+    public String getDescription() {
+        return description;
     }
 }

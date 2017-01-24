@@ -13,8 +13,29 @@
 
 <div class="container" ng-controller="wikiController" ng-cloak>
     <div class="row layout-padding" style="padding-top: 10px;">
-        <button class="btn btn-info" type="button" id="search-wiki-button" ng-click="searchWiki()"><span class="fa fa-search" style="font-size: 12px;"></span></button>
-        <button class="btn btn-info pull-right" type="button" id="edit-wiki-button" ng-click="editWiki()"><span  class="fa fa-pencil-square-o" style="font-size: 12px;"></span></button>
+        <button class="btn btn-info pull-left" type="button" id="search-wiki-button" ng-click="searchWiki()">Search</button>
+        <button class="btn btn-info pull-right" type="button" id="edit-wiki-button" ng-click="editWiki()">Edit</button>
+        <button class="btn btn-info" style="margin:auto; display:block;" data-toggle="modal" data-target="#share" type="button" id="share-wiki-button">Get Shareable Id</button>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="share" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Share With Others</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Copy the document Id below and share with others.</p>
+                    <br><br>
+                    <p>{{documentId}}</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Done</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="container" style="text-align: center;"><h3 style="font-weight: bold; color: blue;">{{title}}</h3></div>

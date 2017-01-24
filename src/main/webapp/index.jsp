@@ -28,6 +28,9 @@
 <input id="userId" value="<%=userId%>" type="hidden" />
 
 <div class="container" ng-controller="searchController" ng-cloak>
+  <div class="row" style="text-align: center;">
+    <img src="images/icon.png" style="width: 100px; height: 50px;" />
+  </div>
 
   <div class="row layout-padding" style="text-align: center; padding-top: 10px; padding-bottom: 10px;">
     <div id="custom-search-input">
@@ -43,7 +46,35 @@
   </div>
 
   <div class="row layout-padding" id="wrapper" style="text-align: center; padding-bottom: 10px;">
-    <button class="btn btn-info" type="button" style="margin: auto;" id="create-wiki-button" ng-click="createWiki()"><span class="fa fa-plus-square-o"></span> Create Wiki</button>
+    <button class="btn btn-info" type="button" style="margin: auto; margin-right: 5px;" id="create-wiki-button" ng-click="createWiki()"><span class="fa fa-plus-square-o"></span> Create Wiki</button>
+    <button class="btn btn-info" type="button" style="margin: auto;" data-toggle="modal" data-target="#wiki" id="get-wiki-button"><span class="fa fa-file-text-o"></span> Get Document By Id</button>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="wiki" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Share With Others</h4>
+        </div>
+        <div class="modal-body" style="text-align: center">
+          <div id="custom-share-input">
+            <div class="input-group col-md-6">
+              <input type="text" class="form-control input-lg" placeholder="Copy Shareable Id..." ng-model="wikiId" id="share-wiki-text"/>
+              <span class="input-group-btn">
+          <button class="btn btn-info btn-lg" type="button" id="wiki-button" ng-click="goToWikiPage(wikiId)">
+            GetWiki
+          </button>
+        </span>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Done</button>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="search-section1 layout-padding" id="searchDiv" ng-if="searchEnabled">

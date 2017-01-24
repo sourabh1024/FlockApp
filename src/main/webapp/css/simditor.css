@@ -31,7 +31,7 @@
 }
 .simditor .simditor-body {
     padding: 22px 15px 40px;
-    min-height: 300px;
+    min-height: 200px;
     outline: none;
     cursor: text;
     position: relative;

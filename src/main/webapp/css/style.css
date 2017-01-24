@@ -120,6 +120,11 @@
     display : inline;
 }
 
+.CodeMirror-scroll {
+    height: 320px;
+    overflow-y: scroll;
+}
+
 #keyword{
     width: 623px;
 }

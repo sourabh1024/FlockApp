@@ -1,0 +1,6 @@
+<Configure id="Server" class="org.eclipse.jetty.server.Server">
+    <Call name="setAttribute">
+        <Arg>org.eclipse.jetty.server.Request.maxFormContentSize</Arg>
+        <Arg>-1</Arg>
+    </Call>
+</Configure>

@@ -21,8 +21,7 @@ public class Thanks extends HttpServlet {
         PrintWriter out = resp.getWriter();
         resp.setStatus(200);
         resp.setContentType("text/plain");
-        out.write("hello");
-        System.out.println("thanks"+ req);
+        out.write("Installed. Enjoy Flock Wiki");
         out.flush();
         out.close();
     }

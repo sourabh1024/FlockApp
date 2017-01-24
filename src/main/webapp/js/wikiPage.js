@@ -16,7 +16,7 @@ app.controller('wikiController', function ($scope, $http, $location, $rootScope,
     $scope.getDocument = function (id) {
         var def = $q.defer();
         var response = $http({
-            url: "/testweb/getdoc",
+            url: "/getdoc",
             method: "GET",
             params: {
                 documentId : id,
@@ -39,17 +39,17 @@ app.controller('wikiController', function ($scope, $http, $location, $rootScope,
         $scope.documentId = getParameterByName("id");
         $scope.getDocument($scope.documentId).then(function (data) {
             $scope.title = data.title;
-            document.getElementById('content').innerHTML = data.content;
+            document.getElementById('content').innerHTML = data.html_content;
         });
     };
 
     $scope.init();
 
     $scope.searchWiki = function () {
-        window.location = '/testweb/index.jsp?userId='+$scope.userId;
+        window.location = '/index.jsp?userId='+$scope.userId;
     };
 
     $scope.editWiki = function () {
-        window.location = '/testweb/createWiki.jsp?userId='+$scope.userId+'&documentId='+$scope.documentId;
+        window.location = '/createWiki.jsp?userId='+$scope.userId+'&documentId='+$scope.documentId;
     };
 });
