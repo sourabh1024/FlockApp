@@ -7,12 +7,15 @@ import org.jsoup.Jsoup;
  */
 public class GeneralUtils {
     public static String html2text(String html) {
-        return Jsoup.parse(html).text();
+        if (html !=null)
+            return Jsoup.parse(html).text();
+        return null;
     }
 
     public static String getDescriptionFromContent(String html) {
         String description = html2text(html);
-        description = description.substring(0,Math.min(200,description.length()));
+        if (description!= null)
+            description = description.substring(0,Math.min(200,description.length()-1));
         return description;
     }
 }

@@ -59,6 +59,7 @@ public class EsIndexWikiDocument {
                             .field("content", wikiBean.getContent())
                             .field("team_name", wikiBean.getTeamName())
                             .field("visible_to", wikiBean.getVisibleTo())
+                            .field("description", wikiBean.getDescription())
                             .endObject()
                     )
                     .get();

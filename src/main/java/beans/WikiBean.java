@@ -1,14 +1,11 @@
 package beans;
 
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-import com.sun.deploy.util.GeneralUtil;
+
 import services.CreateWiki;
 import utils.GeneralUtils;
 
 import javax.servlet.http.HttpServletRequest;
-import java.io.IOException;
-import java.util.Scanner;
+
 
 /**
  * Created by sourabh.su on 22/01/17.
