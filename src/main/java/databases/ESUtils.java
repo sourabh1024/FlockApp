@@ -55,7 +55,7 @@ public class ESUtils {
 
     public MultiSearchResponse searchByTitle(String query, String teamId) {
         //TODO
-        SearchRequestBuilder searchRequestBuilder = esClient.prepareSearch().setSize(50).setQuery(this.getESSearchQuery(query, teamId)).setSearchType(SearchType.DFS_QUERY_THEN_FETCH);
+        SearchRequestBuilder searchRequestBuilder = esClient.prepareSearch().setSize(50).setQuery(this.getESSearchQuery(query, teamId));
         MultiSearchResponse multiSearchResponse = esClient.prepareMultiSearch().add(searchRequestBuilder).execute().actionGet();
         return multiSearchResponse;
     }

@@ -34,6 +34,7 @@ public class EsIndexWikiDocument {
                 "    \"title\":\""+wikiBean.getTitle()+"\",\n" +
                 "    \"content\":\""+wikiBean.getContent()+"\",\n" +
                 "    \"team_name\":\""+wikiBean.getTeamName()+"\"\n" +
+                "    \"description\":\""+wikiBean.getDescription()+"\"\n" +
                 "}";
         return query;
     }

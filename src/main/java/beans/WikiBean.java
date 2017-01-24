@@ -2,7 +2,9 @@ package beans;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import com.sun.deploy.util.GeneralUtil;
 import services.CreateWiki;
+import utils.GeneralUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
@@ -20,6 +22,7 @@ public class WikiBean {
     private String visibleTo;
     private String keyword;
     private String documentId;
+    private String description;
 
 
     public WikiBean(HttpServletRequest request) {
@@ -31,6 +34,7 @@ public class WikiBean {
         this.keyword = getString(request, "keyword");
         this.documentId = getString(request, "documentId");
         this.teamName = CreateWiki.getInstance().getUserDetailsFromSql(this.userId).get("teamId").toString();
+        this.description = GeneralUtils.getDescriptionFromContent(this.content);
         System.out.println("Recieved crate wiki request for user " + this.userId);
     }
 
@@ -92,5 +96,13 @@ public class WikiBean {
 
     public String getDocumentId() {
         return documentId;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
