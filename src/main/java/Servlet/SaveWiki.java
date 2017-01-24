@@ -33,6 +33,7 @@ public class SaveWiki extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         WikiBean wikiBean = new WikiBean(req);
+
         CreateWiki createWiki = CreateWiki.getInstance();
         String response = createWiki.addDocumentToDataBase(wikiBean);
         HashMap<String, String > map = new LinkedHashMap<String, String>();
