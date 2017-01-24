@@ -38,9 +38,8 @@ app.controller('wikiController', function ($scope, $http, $location, $rootScope,
         $scope.userId = getParameterByName("userId");
         $scope.documentId = getParameterByName("id");
         $scope.getDocument($scope.documentId).then(function (data) {
-            console.log("nextstep");
             $scope.title = data.title;
-            $scope.content = data.content;
+            document.getElementById('content').innerHTML = data.content;
         });
     };
 
