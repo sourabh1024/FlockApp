@@ -3,6 +3,7 @@ package Servlet;
 import beans.RequestParams;
 import beans.WikiBean;
 import beans.WikiDocument;
+import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import services.CreateWiki;
@@ -14,6 +15,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Scanner;
 
 /**
@@ -31,9 +34,13 @@ public class SaveWiki extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         WikiBean wikiBean = new WikiBean(req);
         CreateWiki createWiki = CreateWiki.getInstance();
-        if (createWiki.addDocumentToDataBase(wikiBean)) {
-            System.out.println("success");
-        }
-        System.out.println("lal lalalla");
+        String response = createWiki.addDocumentToDataBase(wikiBean);
+        HashMap<String, String > map = new LinkedHashMap<String, String>();
+        map.put("flag", response);
+        PrintWriter out = resp.getWriter();
+        resp.setContentType("application/json");
+        out.print(new Gson().toJson(map));
+        out.flush();
+        out.close();
     }
 }

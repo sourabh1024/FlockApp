@@ -40,6 +40,14 @@ app.controller('searchController', function ($scope, $http, $location, $rootScop
         window.location = '/testweb/wikiPage.jsp?userId='+userId+'&id='+id;
     };
 
+    $scope.createWiki = function () {
+        var userId = jQuery('#userId').val();
+        if(userId == "null"){
+            userId = getParameterByName("userId");
+        }
+        window.location = '/testweb/createWiki.jsp?userId='+userId;
+    };
+
     $scope.searchWiki = function (keyword, userId) {
         var def = $q.defer();
         var response = $http({

@@ -91,7 +91,7 @@
 }
 
 #searchDiv{
-    width: 80%;
+    width: 100%;
     background-color: aliceblue;
     overflow:auto;
     padding-left: 10px;
@@ -129,4 +129,10 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+}
+
+.divider{
+    width:5px;
+    height:auto;
+    display:inline-block;
 }

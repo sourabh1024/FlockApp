@@ -6,17 +6,19 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <link rel="stylesheet" href="https://jqueryvalidation.org/files/demo/site-demos.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
 </head>
 
 <body>
 
 <div class="container" ng-controller="wikiController" ng-cloak>
-    <div class="row layout-padding">
-        <button class="btn btn-success" type="button" id="search-wiki-button" ng-click="searchWiki()"><span class="fa fa-search" style="font-size: 12px;"></span></button>
-        <button class="btn btn-success pull-right" type="button" id="edit-wiki-button" ng-click="editWiki()"><span class="fa fa-pencil-square-o" style="font-size: 12px;"></span></button>
+    <div class="row layout-padding" style="padding-top: 10px;">
+        <button class="btn btn-info" type="button" id="search-wiki-button" ng-click="searchWiki()"><span class="fa fa-search" style="font-size: 12px;"></span></button>
+        <button class="btn btn-info pull-right" type="button" id="edit-wiki-button" ng-click="editWiki()"><span  class="fa fa-pencil-square-o" style="font-size: 12px;"></span></button>
     </div>
-    <div class="container"><h3 style="font-weight: bold; color: blue;">{{title}}</h3></div>
+
+    <div class="container" style="text-align: center;"><h3 style="font-weight: bold; color: blue;">{{title}}</h3></div>
+    <br>
     <div class="container">
         <p>
             {{content}}

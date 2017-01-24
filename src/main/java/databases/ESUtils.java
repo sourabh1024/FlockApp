@@ -30,6 +30,7 @@ public class ESUtils {
                 "                  \"title^3\",\n" +
                 "                  \"content\"\n" +
                 "               ]\n" +
+                " , \"type\":\"phrase_prefix\"\n"+
                 "            }\n" +
                 "         },\n" +
                 "         \"filter\": {\n" +

@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="https://jqueryvalidation.org/files/demo/site-demos.css">
   <link rel="stylesheet" href="css/searchBar.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
 </head>
 
 <body>
@@ -27,14 +28,24 @@
 <input id="userId" value="<%=userId%>" type="hidden" />
 
 <div class="container" ng-controller="searchController" ng-cloak>
+
   <div class="row layout-padding" style="text-align: center; padding-top: 10px; padding-bottom: 10px;">
-    <input style="margin-bottom: 1px;" type="text" id="search-wiki-text"/>
-    <button class="btn btn-success" type="button" id="search-wiki-button" ng-click="searchResponse()">Search</button>
-    <button class="btn btn-success pull-right" type="button" style="margin: auto;" id="create-wiki-side-button" ng-if="searchEnabled">Create Wiki</button>
+    <div id="custom-search-input">
+      <div class="input-group col-md-12">
+        <input type="text" class="form-control input-lg" placeholder="Search..." id="search-wiki-text"/>
+        <span class="input-group-btn">
+          <button class="btn btn-info btn-lg" type="button" id="search-wiki-button" ng-click="searchResponse()">
+            <i class="fa fa-search"></i>
+          </button>
+        </span>
+      </div>
+    </div>
   </div>
-  <div class="row layout-padding" id="wrapper" style="text-align: center" ng-if="!searchEnabled">
-    <button class="btn btn-success" type="button" style="margin: auto;" id="create-wiki-button">Create Wiki</button>
+
+  <div class="row layout-padding" id="wrapper" style="text-align: center; padding-bottom: 10px;">
+    <button class="btn btn-info" type="button" style="margin: auto;" id="create-wiki-button" ng-click="createWiki()"><span class="fa fa-plus-square-o"></span> Create Wiki</button>
   </div>
+
   <div class="search-section1 layout-padding" id="searchDiv" ng-if="searchEnabled">
     <div class="list-group" ng-repeat="searchRow in searchResults">
       <div><a class="list-group" ng-click="goToWikiPage(searchRow.id)"><h4>{{searchRow.title}}</h4></a></div>

@@ -9,9 +9,14 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <link rel="stylesheet" href="https://jqueryvalidation.org/files/demo/site-demos.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
 </head>
+
 <body>
-<div class="container" ng-controller="createWikiCont">
+
+<div class="container" ng-controller="createWikiCont" ng-cloak>
+
     <form id="wikiForm">
         <div class="layout-padding" style="padding-bottom: 10px; padding-top: 10px;">
             <div class="input-group">
@@ -19,21 +24,27 @@
                 <input type="text" class="form-control" placeholder="Title" aria-describedby="wikiTitle" id="wikiTitle" required>
             </div>
         </div>
+
         <div class="layout-padding">
             <textarea id="wiki" placeholder="Write Something..." required></textarea>
         </div>
+
         <div class="layout-padding">
             <h5> Visible To </h5>
             <label class="radio-inline">
-                <input type="radio" name="optradio" value="all">All
+                <input type="radio" name="optradio" id="all" value="all">All
             </label>
             <label class="radio-inline">
-                <input type="radio" name="optradio" value="team" checked>Team
+                <input type="radio" name="optradio" id="team" value="team" checked>Team
             </label>
-            <button class="btn btn-success pull-right" type="button" id="save-wiki-button" ng-click="saveWiki()">Save</button>
+
+            <button class="btn btn-info pull-right layout-padding" type="button" id="home-button" style="margin-left: 5px;" ng-click="home()"><span class="fa fa-home"></span> Home</button>
+            <button class="btn btn-info pull-right layout-padding" type="button" id="save-wiki-button" ng-click="saveWiki()"><span class="fa fa-floppy-o"></span> Save</button>
         </div>
     </form>
+
 </div>
+
 <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.min.js"></script>

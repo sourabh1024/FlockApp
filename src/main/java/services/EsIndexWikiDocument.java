@@ -38,7 +38,7 @@ public class EsIndexWikiDocument {
         return query;
     }
 
-    public IndexResponse indexDocument(WikiBean wikiBean) {
+    public String indexDocument(WikiBean wikiBean) {
 
         String documentId = wikiBean.getDocumentId();
         if (documentId.equals("-1")) {
@@ -61,11 +61,12 @@ public class EsIndexWikiDocument {
                             .endObject()
                     )
                     .get();
-            return response;
+            return documentId;
         } catch (Exception ex) {
             System.out.println(ex);
         }
-        return null;
+        // -1 denotes document was not saved
+        return "-1";
     }
 
 }

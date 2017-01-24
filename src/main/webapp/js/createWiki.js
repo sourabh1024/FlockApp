@@ -42,7 +42,7 @@ app.controller('createWikiCont', function ($scope, $http, $location, $rootScope,
             $scope.getDocument(userId, documentId).then(function (data) {
                 var title = jQuery('#wikiTitle').val(data.title);
                 var content = simplemde.value(data.content);
-                var visibleTo = jQuery("input[name='optradio']:checked").val(data.visibleTo);
+                var visibleTo = jQuery('#'+ data.visible_to).prop("checked", true);
             });
         }
     };
@@ -62,10 +62,24 @@ app.controller('createWikiCont', function ($scope, $http, $location, $rootScope,
         console.log("user Id : ", userId);
         console.log("userName : ", userName);
         console.log("groupName: ", groupName);
-        $scope.saveWikiApi(title, content, visibleTo, userId, userName, groupName);
+        $scope.saveWikiApi(title, content, visibleTo, userId, userName, groupName).then(function (data) {
+            if(data.flag == "-1") {
+                alert("Error!");
+                return;
+            }
+            $scope.goToWikiPage(data.flag);
+        });
     };
 
+    $scope.goToWikiPage = function (id) {
+        var userId = getParameterByName("userId");
+        window.location = '/testweb/wikiPage.jsp?userId='+userId+'&id='+id;
+    };
 
+    $scope.home = function () {
+        var userId = getParameterByName("userId");
+        window.location = '/testweb/index.jsp?userId='+userId;
+    };
 
     $scope.saveWikiApi = function (title, content, visible, userId, userName, groupName) {
         var def = $q.defer();

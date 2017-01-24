@@ -26,21 +26,21 @@ public class CreateWiki {
 
     private static final Integer maxNumberOfAttempts = 5;
 
-    public boolean addDocumentToDataBase(WikiBean wikiBean) {
+    public String addDocumentToDataBase(WikiBean wikiBean) {
         Integer numberofAttempts = 0;
         while (numberofAttempts < maxNumberOfAttempts) {
             this.esClient = new ESConnectionManager().getEsClient();
             if (this.esClient!=null) {
                 esIndexWikiDocument = new EsIndexWikiDocument(esClient);
-                IndexResponse indexResponse = esIndexWikiDocument.indexDocument(wikiBean);
+                String indexResponse = esIndexWikiDocument.indexDocument(wikiBean);
                 if (indexResponse != null) {
                     //TODO : Check if the document has been indexed
-                    return true;
+                    return indexResponse;
                 }
             }
             numberofAttempts++;
         }
-        return false;
+        return "-1";
     }
 
     public Map getUserDetailsFromSql(String userId) {
