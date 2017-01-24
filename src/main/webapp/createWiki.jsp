@@ -54,6 +54,7 @@
 <script src="js/selectize.min.js"></script>
 <script src="js/list.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular.min.js"></script>
+<script src="js/mmd.min.js"></script>
 <script src="js/createWiki.js"></script>
 <script>
     var simplemde = new SimpleMDE();
