@@ -51,18 +51,14 @@ app.controller('createWikiCont', function ($scope, $http, $location, $rootScope,
 
     $scope.saveWiki = function () {
         var title = jQuery('#wikiTitle').val();
-        var content = simplemde.value();
+        var content = simplemde.options.previewRender(simplemde.value());
         var visibleTo = jQuery("input[name='optradio']:checked").val();
         var userId = getParameterByName("userId");
-        var userName = getParameterByName("userName");
-        var groupName = getParameterByName("groupName");
         console.log("Title : ", title);
         console.log("Content : ", content);
         console.log("Visible To: ", visibleTo);
         console.log("user Id : ", userId);
-        console.log("userName : ", userName);
-        console.log("groupName: ", groupName);
-        $scope.saveWikiApi(title, content, visibleTo, userId, userName, groupName).then(function (data) {
+        $scope.saveWikiApi(title, content, visibleTo, userId).then(function (data) {
             if(data.flag == "-1") {
                 alert("Error!");
                 return;
@@ -81,7 +77,7 @@ app.controller('createWikiCont', function ($scope, $http, $location, $rootScope,
         window.location = '/testweb/index.jsp?userId='+userId;
     };
 
-    $scope.saveWikiApi = function (title, content, visible, userId, userName, groupName) {
+    $scope.saveWikiApi = function (title, content, visible, userId) {
         var def = $q.defer();
         var documentId = getParameterByName("documentId") == null ? -1 : getParameterByName("documentId");
         var response = $http({
@@ -92,8 +88,6 @@ app.controller('createWikiCont', function ($scope, $http, $location, $rootScope,
                 content : content,
                 visibleTo : visible,
                 userId : userId,
-                userName : userName,
-                groupName : groupName,
                 documentId : documentId
             }
         });

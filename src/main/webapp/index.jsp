@@ -49,7 +49,7 @@
   <div class="search-section1 layout-padding" id="searchDiv" ng-if="searchEnabled">
     <div class="list-group" ng-repeat="searchRow in searchResults">
       <div><a class="list-group" ng-click="goToWikiPage(searchRow.id)"><h4>{{searchRow.title}}</h4></a></div>
-      <div class="list-group desc" ><p id="searchPara">{{searchRow.content}}</p></div>
+      <div class="list-group desc" ><p id="searchPara">{{searchRow.description}}</p></div>
     </div>
   </div>
 </div>

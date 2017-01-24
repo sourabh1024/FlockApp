@@ -19,10 +19,7 @@
 
     <div class="container" style="text-align: center;"><h3 style="font-weight: bold; color: blue;">{{title}}</h3></div>
     <br>
-    <div class="container">
-        <p>
-            {{content}}
-        </p>
+    <div class="container" id="content">
     </div>
 </div>
 
