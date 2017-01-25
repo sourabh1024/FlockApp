@@ -40,6 +40,8 @@ app.controller('wikiController', function ($scope, $http, $location, $rootScope,
         $scope.getDocument($scope.documentId).then(function (data) {
             $scope.title = data.title;
             document.getElementById('content').innerHTML = data.html_content;
+            $scope.createdBy = data.owner_name;
+            $scope.editedBy = data.last_edited_by;
         });
     };
 

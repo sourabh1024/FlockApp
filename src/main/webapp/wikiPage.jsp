@@ -46,6 +46,10 @@
         <div class="panel-heading"><h4 style="font-weight: bold; color: black;">{{title}}</h4></div>
         <div class="panel-body container" id="content">
         </div>
+        <div>
+            <span class="label label-default pull-left">Created By:  {{createdBy}}</span>
+            <span class="label label-default pull-right">Edited By:  {{editedBy}}</span>
+        </div>
     </div>
 
     <%--<div class="container" style="text-align: center;"><h3 style="font-weight: bold; color: blue;">{{title}}</h3></div>--%>
