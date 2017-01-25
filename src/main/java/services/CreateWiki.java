@@ -32,6 +32,7 @@ public class CreateWiki {
             this.esClient = new ESConnectionManager().getEsClient();
             if (this.esClient!=null) {
                 esIndexWikiDocument = new EsIndexWikiDocument(esClient);
+                wikiBean.setUserName(CreateWiki.getInstance().getUserDetailsFromSql(wikiBean.getUserId()).get("username").toString());
                 String indexResponse = esIndexWikiDocument.indexDocument(wikiBean);
                 if (indexResponse != null) {
                     //TODO : Check if the document has been indexed
@@ -54,6 +55,7 @@ public class CreateWiki {
             ResultSet resultSet = statement.executeQuery(query);
             if(resultSet.next()){
                 userDetails.put("teamId", resultSet.getString("teamid"));
+                userDetails.put("username", resultSet.getString("username"));
             }
         } catch (Exception ex){
             ex.printStackTrace();
