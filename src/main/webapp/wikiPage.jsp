@@ -44,7 +44,14 @@
     </div>
     <div class="panel panel-default" style="margin-top: 5px;">
         <div class="panel-heading"><h4 style="font-weight: bold; color: black;">{{title}}</h4></div>
-        <div class="panel-body container" id="content">
+        <div class="panel-body " id="content">
+        </div>
+        <div class="panel-footer">
+            <div class="clearfix">
+
+                <div style="float: left">Created by : {{ownerName}}</div>
+                <div style="float: right">Last Edited by  :{{lastEditedBy}}</div>
+            </div>
         </div>
     </div>
 

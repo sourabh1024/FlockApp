@@ -39,6 +39,8 @@ app.controller('wikiController', function ($scope, $http, $location, $rootScope,
         $scope.documentId = getParameterByName("id");
         $scope.getDocument($scope.documentId).then(function (data) {
             $scope.title = data.title;
+            $scope.ownerName = data.owner_name;
+            $scope.lastEditedBy = data.last_edited_by;
             document.getElementById('content').innerHTML = data.html_content;
         });
     };
