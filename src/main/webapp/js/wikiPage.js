@@ -42,6 +42,8 @@ app.controller('wikiController', function ($scope, $http, $location, $rootScope,
             $scope.ownerName = data.owner_name;
             $scope.lastEditedBy = data.last_edited_by;
             document.getElementById('content').innerHTML = data.html_content;
+            $scope.createdBy = data.owner_name;
+            $scope.editedBy = data.last_edited_by;
         });
     };
 

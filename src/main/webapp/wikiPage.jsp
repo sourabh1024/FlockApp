@@ -53,6 +53,10 @@
                 <div style="float: right">Last Edited by  :{{lastEditedBy}}</div>
             </div>
         </div>
+        <div>
+            <span class="label label-default pull-left">Created By:  {{createdBy}}</span>
+            <span class="label label-default pull-right">Edited By:  {{editedBy}}</span>
+        </div>
     </div>
 
     <%--<div class="container" style="text-align: center;"><h3 style="font-weight: bold; color: blue;">{{title}}</h3></div>--%>
