@@ -1,0 +1,6 @@
+CREATE TABLE user_info (
+    userid VARCHAR(100),
+    teamid VARCHAR(100),
+    username VARCHAR(100),
+    token VARCHAR(100)
+);
