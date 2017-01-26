@@ -18,9 +18,9 @@ public class ESConnectionManager {
         if (this.esClient == null) {
             try {
                 this.esClient = ESConnection.getConnection(
-                        "127.0.0.1",
-                        9300,
-                        "elasticsearch"
+                        SysProperties.getInstance().getProperty("elasticSearchIP"),
+                        Integer.parseInt(SysProperties.getInstance().getProperty("elasticSearchPort")),
+                        SysProperties.getInstance().getProperty("elasticSearchClusterName")
                 );
             } catch (Exception ex) {
                 System.out.println("Exception while creating Elastic Search Client");

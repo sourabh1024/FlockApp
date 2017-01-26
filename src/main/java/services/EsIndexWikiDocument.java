@@ -31,13 +31,11 @@ public class EsIndexWikiDocument {
     public String indexDocument(WikiBean wikiBean) {
 
         String documentId = wikiBean.getDocumentId();
-        String field = "last_edited_by";
         Boolean isNewDoc = false;
         if (documentId.equals("-1")) {
             documentId = EncryptionUtils.getCryptoHash(wikiBean.getTitle()
-                                                        +wikiBean.getUserId()
-                                                        + Calendar.getInstance().get(Calendar.MILLISECOND));
-            field = "owner_name";
+                                +wikiBean.getUserId()
+                                +Calendar.getInstance().get(Calendar.MILLISECOND));
             isNewDoc = true;
         }
 
@@ -57,7 +55,8 @@ public class EsIndexWikiDocument {
                                 .field("visible_to", wikiBean.getVisibleTo())
                                 .field("html_content", wikiBean.getHtmlContent())
                                 .field("description", wikiBean.getDescription())
-                                .field(field, wikiBean.getUserName())
+                                .field("owner_name", wikiBean.getUserName())
+                                .field("last_edited_by", wikiBean.getUserName())
                                 .endObject()
                         )
                         .get();
@@ -76,7 +75,7 @@ public class EsIndexWikiDocument {
                         .field("visible_to", wikiBean.getVisibleTo())
                         .field("html_content", wikiBean.getHtmlContent())
                         .field("description", wikiBean.getDescription())
-                        .field(field, wikiBean.getUserName())
+                        .field("last_edited_by", wikiBean.getUserName())
                         .endObject());
                 esClient.update(updateRequest).get();
             }

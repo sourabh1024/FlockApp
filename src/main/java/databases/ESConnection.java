@@ -20,7 +20,7 @@ public class ESConnection {
             client = TransportClient.builder()
                     .settings(settings)
                     .build()
-                    .addTransportAddress( new InetSocketTransportAddress(InetAddress.getByName("127.0.0.1"), 9300));
+                    .addTransportAddress( new InetSocketTransportAddress(InetAddress.getByName(elasticIp), elasticPort));
         } catch (Exception ex) {
             throw new CustomException(ex.getMessage(), ex);
         }
